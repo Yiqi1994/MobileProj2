@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="eWx-wP-Srv" kind="relationship" relationship="viewControllers" id="gbJ-cP-8om"/>
+                        <segue destination="L5t-G2-LeW" kind="relationship" relationship="viewControllers" id="Sb2-4H-XYH"/>
+                        <segue destination="34T-gd-ql4" kind="relationship" relationship="viewControllers" id="Hkq-f8-IQi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="332"/>
+        </scene>
+        <!--HowToUse-->
+        <scene sceneID="Uam-wn-Zmc">
+            <objects>
+                <viewController id="34T-gd-ql4" customClass="HowToUseViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CN0-lr-p4t"/>
+                        <viewControllerLayoutGuide type="bottom" id="FDc-By-aYu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZx-UG-Nje">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="HowToUse" image="HowToUseTab" id="ofM-LU-1qi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxP-Gl-dsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-540" y="1090"/>
+        </scene>
+        <!--Crime Info-->
+        <scene sceneID="N6F-iO-Fk1">
+            <objects>
+                <viewController id="eWx-wP-Srv" customClass="CrimeInfoViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uYb-xp-Jfw"/>
+                        <viewControllerLayoutGuide type="bottom" id="7s1-LD-Uqz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XYD-PW-okf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Crime Info" image="InfoTab" id="KNQ-ka-2XJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-h6-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="750"/>
+        </scene>
+        <!--Face Identify-->
+        <scene sceneID="WNJ-Sf-THP">
+            <objects>
+                <viewController id="L5t-G2-LeW" customClass="FaceIdentViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uPD-RT-qsk"/>
+                        <viewControllerLayoutGuide type="bottom" id="SP8-fL-SRa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="emR-AQ-ZrA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Face Identify" image="FaceTab" id="oSZ-ce-mfh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cs2-sN-9Yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="412" y="17"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="FaceTab" width="25" height="25"/>
+        <image name="HowToUseTab" width="25" height="25"/>
+        <image name="InfoTab" width="25" height="25"/>
+    </resources>
+</document>
