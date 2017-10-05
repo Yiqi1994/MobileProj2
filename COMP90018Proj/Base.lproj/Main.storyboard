@@ -59,13 +59,27 @@
                     <view key="view" contentMode="scaleToFill" id="XYD-PW-okf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-lD-LRw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="top" secondItem="XYD-PW-okf" secondAttribute="top" id="J2z-Yx-8Ki"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="leading" secondItem="XYD-PW-okf" secondAttribute="leading" id="KQ5-Oo-4eb"/>
+                            <constraint firstAttribute="trailing" secondItem="QUe-lD-LRw" secondAttribute="trailing" id="Ni2-x1-lDv"/>
+                            <constraint firstItem="7s1-LD-Uqz" firstAttribute="top" secondItem="QUe-lD-LRw" secondAttribute="bottom" constant="322" id="WKx-Cf-XJq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crime Info" image="InfoTab" id="KNQ-ka-2XJ"/>
+                    <connections>
+                        <outlet property="mapView" destination="QUe-lD-LRw" id="XeG-2L-iwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-h6-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="412" y="750"/>
+            <point key="canvasLocation" x="412" y="749.7751124437782"/>
         </scene>
         <!--Face Identify-->
         <scene sceneID="WNJ-Sf-THP">

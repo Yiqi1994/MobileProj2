@@ -8,9 +8,11 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
     
     override func viewDidLoad() {
@@ -44,6 +46,22 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
+        let pinForUserLocation = MKPointAnnotation()
+        pinForUserLocation.coordinate = myLocation
+        
+        mapView.addAnnotation(pinForUserLocation)
+        mapView.showAnnotations([pinForUserLocation], animated: true)
+        mapView.setRegion(region, animated: true)
+        
     }
     
     func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?) -> Void) {
