@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,9 +59,39 @@
                     <view key="view" contentMode="scaleToFill" id="XYD-PW-okf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5BD-CZ-Fai">
+                                <rect key="frame" x="0.0" y="47" width="375" height="128"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6gM-yb-XC2">
+                                <rect key="frame" x="0.0" y="294" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="JAF-wa-9vm">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JAF-wa-9vm" id="s5t-Pb-DHS">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5BD-CZ-Fai" firstAttribute="leading" secondItem="XYD-PW-okf" secondAttribute="leading" id="24D-iV-ZUC"/>
+                            <constraint firstItem="5BD-CZ-Fai" firstAttribute="top" secondItem="uYb-xp-Jfw" secondAttribute="bottom" id="2di-Kh-hRl"/>
+                            <constraint firstAttribute="trailing" secondItem="6gM-yb-XC2" secondAttribute="trailing" id="DgN-po-YXM"/>
+                            <constraint firstItem="6gM-yb-XC2" firstAttribute="top" secondItem="5BD-CZ-Fai" secondAttribute="bottom" constant="10" id="HbN-9J-lFr"/>
+                            <constraint firstAttribute="trailing" secondItem="5BD-CZ-Fai" secondAttribute="trailing" id="sEf-Ds-6E2"/>
+                            <constraint firstItem="6gM-yb-XC2" firstAttribute="leading" secondItem="XYD-PW-okf" secondAttribute="leading" id="t9V-T5-JXE"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crime Info" image="InfoTab" id="KNQ-ka-2XJ"/>
+                    <connections>
+                        <outlet property="mapView" destination="5BD-CZ-Fai" id="yJz-rK-ROT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-h6-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
