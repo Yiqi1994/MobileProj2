@@ -43,7 +43,6 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
 
         // show user locaiton on map
         mapView.showsUserLocation=true
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,33 +111,29 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
                 print("response = \(String(describing: response))")
             }
             
-            let responseString = String(data: data, encoding: .utf8)            
-            
+            // convert response into json array
+            let responseString = String(data: data, encoding: .utf8)
             let objectData = responseString!.data(using: String.Encoding.utf8)
             let json = try! JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers)
             let myjson = JSON(json)
-            print(myjson)
-//            self.extractJSON(json:response)
-       
+            
+            // count offence subdivision
+            var chartDataSuburb = [String:Int]()
+            for temp in (myjson.array)!{
+                let key = temp["CSA Offence Subdivision"].string
+                if(chartDataSuburb[key!] != nil) {
+                    let old = chartDataSuburb[key!]
+                    let new = old! + 1
+                    chartDataSuburb[key!] = new
+                } else {
+                    chartDataSuburb[key!] = 1
+                }
+            }
+            print(chartDataSuburb)
+            print(chartDataSuburb.count)
         }
         task.resume()
     }
-    
-    func extractJSON(json:Any) {
-        do {
-            let data1 = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-            let convertedString = String(describing:(data:data1,String.Encoding.utf8))
-            print("convertedString =\(String(describing:convertedString))")
-        }catch {
-            print(error.localizedDescription)
-        }
-        
-    }
-    
-//    struct Todo:Codable {
-//        var suburb:String
-//        var offenceType:String
-//    }
     
     // count the apperance of key in jsonString or jsonArray
 //    func countAppearance(JSONArray: Array<Any>){
