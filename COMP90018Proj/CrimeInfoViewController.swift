@@ -20,6 +20,8 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.init(red:244.0/255.0, green: 245.0 / 255.0, blue: 245.0/255,alpha: 1.0)
+        
         
         // get and verify authorization
         locationManager = CLLocationManager()
@@ -134,18 +136,5 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
         }
         task.resume()
     }
-    
-    // count the apperance of key in jsonString or jsonArray
-//    func countAppearance(JSONArray: Array<Any>){
-//        var counts:[String:Int] = [:]
-//        for item in JSONArray{
-//            counts[item] = counts[item,default:0]+=1
-//        }
-//        print(counts)
-//        
-//        for(key, value) in counts {
-//            print("\(key) occurs \(value) time(s)")
-//        }
-//    }
     
 }

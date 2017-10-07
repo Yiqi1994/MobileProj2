@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,12 +28,12 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337.5" y="369.07333333333332"/>
+            <point key="canvasLocation" x="-540" y="332"/>
         </scene>
         <!--HowToUse-->
         <scene sceneID="Uam-wn-Zmc">
             <objects>
-                <viewController id="34T-gd-ql4" customClass="HowToUseViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="howToUse" id="34T-gd-ql4" customClass="HowToUseViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FCq-nk-aav"/>
                         <viewControllerLayoutGuide type="bottom" id="plb-U1-oCf"/>
@@ -46,12 +47,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxP-Gl-dsY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-337.5" y="1211.7166666666665"/>
+            <point key="canvasLocation" x="-540" y="1090"/>
         </scene>
         <!--Crime Info-->
         <scene sceneID="N6F-iO-Fk1">
             <objects>
-                <viewController id="eWx-wP-Srv" customClass="CrimeInfoViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="crimeInfo" id="eWx-wP-Srv" customClass="CrimeInfoViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gMU-jj-bPp"/>
                         <viewControllerLayoutGuide type="bottom" id="VIF-M0-CnX"/>
@@ -73,18 +74,21 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crime Info" image="InfoTab" id="KNQ-ka-2XJ"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="keyPath" value=""/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="mapView" destination="QUe-lD-LRw" id="XeG-2L-iwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-h6-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.5" y="833.5"/>
+            <point key="canvasLocation" x="412" y="749.7751124437782"/>
         </scene>
         <!--Face Identify-->
         <scene sceneID="WNJ-Sf-THP">
             <objects>
-                <viewController id="L5t-G2-LeW" customClass="FaceIdentViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="faceIdent" id="L5t-G2-LeW" customClass="FaceIdentViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hp1-Zv-fam"/>
                         <viewControllerLayoutGuide type="bottom" id="3X6-Qf-LaF"/>
@@ -92,13 +96,40 @@
                     <view key="view" contentMode="scaleToFill" id="emR-AQ-ZrA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-Z6-E55">
+                                <rect key="frame" x="118" y="535" width="138" height="34"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="3" height="6"/>
+                                <state key="normal" title="Pick Image">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6E-8j-UkR">
+                                <rect key="frame" x="27" y="114" width="321" height="219"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="219" id="1UZ-1Z-QJq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="centerX" secondItem="e1r-Z6-E55" secondAttribute="centerX" id="8cG-bs-cNF"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="top" secondItem="Hp1-Zv-fam" secondAttribute="bottom" constant="94" id="Gt2-jM-ldt"/>
+                            <constraint firstItem="e1r-Z6-E55" firstAttribute="centerX" secondItem="emR-AQ-ZrA" secondAttribute="centerX" id="Rwu-UP-IlQ"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="leading" secondItem="emR-AQ-ZrA" secondAttribute="leadingMargin" constant="12" id="gpn-ZD-ZK0"/>
+                            <constraint firstItem="3X6-Qf-LaF" firstAttribute="top" secondItem="e1r-Z6-E55" secondAttribute="bottom" constant="139" id="h5Z-YK-CZO"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Face Identify" image="FaceTab" id="oSZ-ce-mfh"/>
+                    <connections>
+                        <outlet property="button" destination="e1r-Z6-E55" id="uOL-VH-gRD"/>
+                        <outlet property="imageView" destination="L6E-8j-UkR" id="AoY-Hz-dAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cs2-sN-9Yi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.5" y="18.898333333333333"/>
+            <point key="canvasLocation" x="412" y="16.641679160419791"/>
         </scene>
     </scenes>
     <resources>
@@ -106,9 +137,4 @@
         <image name="HowToUseTab" width="25" height="25"/>
         <image name="InfoTab" width="25" height="25"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

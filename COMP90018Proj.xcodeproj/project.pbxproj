@@ -15,6 +15,9 @@
 		FA4519EE1F7C94790012893C /* FaceIdentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519ED1F7C94790012893C /* FaceIdentViewController.swift */; };
 		FA4519F01F7C94890012893C /* CrimeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519EF1F7C94890012893C /* CrimeInfoViewController.swift */; };
 		FA4519F21F7C94950012893C /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519F11F7C94950012893C /* HowToUseViewController.swift */; };
+		FA480A2E1F88BBC900001FE5 /* ExampleIrregularityContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA480A2B1F88BBC900001FE5 /* ExampleIrregularityContentView.swift */; };
+		FA480A2F1F88BBC900001FE5 /* ExampleBouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA480A2C1F88BBC900001FE5 /* ExampleBouncesContentView.swift */; };
+		FA480A301F88BBC900001FE5 /* ExampleBasicContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA480A2D1F88BBC900001FE5 /* ExampleBasicContentView.swift */; };
 		FAA98D5F1F88B4E700997A56 /* AZSClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA98D5E1F88B4E700997A56 /* AZSClient.framework */; };
 		FAA98D611F88B51F00997A56 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FAA98D601F88B51F00997A56 /* libxml2.2.tbd */; };
 		FD12484044F6E190A201245C /* Pods_COMP90018Proj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197E55ABE9A3079C845D4645 /* Pods_COMP90018Proj.framework */; };
@@ -46,6 +49,9 @@
 		FA4519ED1F7C94790012893C /* FaceIdentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceIdentViewController.swift; sourceTree = "<group>"; };
 		FA4519EF1F7C94890012893C /* CrimeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrimeInfoViewController.swift; sourceTree = "<group>"; };
 		FA4519F11F7C94950012893C /* HowToUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HowToUseViewController.swift; sourceTree = "<group>"; };
+		FA480A2B1F88BBC900001FE5 /* ExampleIrregularityContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleIrregularityContentView.swift; path = ../../../../../../../Downloads/ExampleIrregularityContentView.swift; sourceTree = "<group>"; };
+		FA480A2C1F88BBC900001FE5 /* ExampleBouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleBouncesContentView.swift; path = ../../../../../../../Downloads/ExampleBouncesContentView.swift; sourceTree = "<group>"; };
+		FA480A2D1F88BBC900001FE5 /* ExampleBasicContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleBasicContentView.swift; path = ../../../../../../../Downloads/ExampleBasicContentView.swift; sourceTree = "<group>"; };
 		FA939C111F88B6B600EA3F4D /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FAA98D5E1F88B4E700997A56 /* AZSClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AZSClient.framework; sourceTree = "<group>"; };
 		FAA98D601F88B51F00997A56 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
@@ -114,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				FAA98D5E1F88B4E700997A56 /* AZSClient.framework */,
+				FA480A2B1F88BBC900001FE5 /* ExampleIrregularityContentView.swift */,
+				FA480A2C1F88BBC900001FE5 /* ExampleBouncesContentView.swift */,
+				FA480A2D1F88BBC900001FE5 /* ExampleBasicContentView.swift */,
 				FA4519C71F7C88A50012893C /* AppDelegate.swift */,
 				FA4519ED1F7C94790012893C /* FaceIdentViewController.swift */,
 				FA4519EF1F7C94890012893C /* CrimeInfoViewController.swift */,
@@ -250,6 +259,7 @@
 				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/PieCharts/PieCharts.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
@@ -258,6 +268,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PieCharts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
@@ -306,10 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA480A301F88BBC900001FE5 /* ExampleBasicContentView.swift in Sources */,
 				FA4519F21F7C94950012893C /* HowToUseViewController.swift in Sources */,
+				FA480A2F1F88BBC900001FE5 /* ExampleBouncesContentView.swift in Sources */,
 				FA4519EE1F7C94790012893C /* FaceIdentViewController.swift in Sources */,
 				FA4519C81F7C88A50012893C /* AppDelegate.swift in Sources */,
 				FA4519F01F7C94890012893C /* CrimeInfoViewController.swift in Sources */,
+				FA480A2E1F88BBC900001FE5 /* ExampleIrregularityContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

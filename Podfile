@@ -7,5 +7,6 @@ target 'COMP90018Proj' do
   pod 'pop','~> 1.0'
   pod 'ImagePicker'
   pod 'PieCharts'
+  pod 'SwiftyButton'
 
 end
