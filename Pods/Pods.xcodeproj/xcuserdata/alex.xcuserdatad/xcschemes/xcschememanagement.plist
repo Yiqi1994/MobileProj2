@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AZSClient.xcscheme</key>
+		<key>ESTabBarController-swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImagePicker-ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImagePicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PieCharts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -19,20 +34,45 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>pop.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>B057C33533B34EC4EA0116CE0025C20A</key>
+		<key>01B8A1F53E3A44C715E44917B4ED95CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CAD348C0A4E10130BEA03768FA5876F2</key>
+		<key>09A62655F66AE53A474D64E42E6E9DF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5CEEB63E19E9C695BE4AF3D0BA4934F</key>
+		<key>3BFF9F651824EF6D7159B996DAA71D25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E4B9D023702B55BE61C5C148DF100EA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5E707FF8CB3D090CCB960ECC250DC20F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD30275A4ED3785027F98E8F10580C5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D42AA8870E85EB4472F51AA2F1303CFB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
