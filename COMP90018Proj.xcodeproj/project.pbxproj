@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2681B97103B1A51F7E501D05 /* Pods_COMP90018Proj.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06E9B4E3915D4F81BAD12797 /* Pods_COMP90018Proj.framework */; };
 		FA4519C81F7C88A50012893C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519C71F7C88A50012893C /* AppDelegate.swift */; };
 		FA4519CF1F7C88A50012893C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4519CD1F7C88A50012893C /* Main.storyboard */; };
 		FA4519D11F7C88A50012893C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4519D01F7C88A50012893C /* Assets.xcassets */; };
@@ -15,7 +16,6 @@
 		FA4519EE1F7C94790012893C /* FaceIdentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519ED1F7C94790012893C /* FaceIdentViewController.swift */; };
 		FA4519F01F7C94890012893C /* CrimeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519EF1F7C94890012893C /* CrimeInfoViewController.swift */; };
 		FA4519F21F7C94950012893C /* HowToUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4519F11F7C94950012893C /* HowToUseViewController.swift */; };
-		FDCB1BBEF0F1410E08D96B54 /* libPods-COMP90018Proj.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84065E71931948961967B294 /* libPods-COMP90018Proj.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,8 +29,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06E9B4E3915D4F81BAD12797 /* Pods_COMP90018Proj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_COMP90018Proj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8250FE12A02B9A399D23E1D4 /* Pods-COMP90018Proj.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COMP90018Proj.release.xcconfig"; path = "Pods/Target Support Files/Pods-COMP90018Proj/Pods-COMP90018Proj.release.xcconfig"; sourceTree = "<group>"; };
-		84065E71931948961967B294 /* libPods-COMP90018Proj.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-COMP90018Proj.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A550490509249A8BAF3FDD6F /* Pods-COMP90018Proj.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COMP90018Proj.debug.xcconfig"; path = "Pods/Target Support Files/Pods-COMP90018Proj/Pods-COMP90018Proj.debug.xcconfig"; sourceTree = "<group>"; };
 		FA05B4E71F85348300E2AE6C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		FA4519C41F7C88A50012893C /* COMP90018Proj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COMP90018Proj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDCB1BBEF0F1410E08D96B54 /* libPods-COMP90018Proj.a in Frameworks */,
+				2681B97103B1A51F7E501D05 /* Pods_COMP90018Proj.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 		DAD1A6B718D26439CB840AFF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				84065E71931948961967B294 /* libPods-COMP90018Proj.a */,
+				06E9B4E3915D4F81BAD12797 /* Pods_COMP90018Proj.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

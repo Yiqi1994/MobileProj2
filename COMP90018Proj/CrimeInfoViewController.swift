@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 import Foundation
+import SwiftyJSON
 
 class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
@@ -113,7 +114,10 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
             
             let responseString = String(data: data, encoding: .utf8)            
             
-            print("responseString = \(String(describing: responseString))")
+            let objectData = responseString!.data(using: String.Encoding.utf8)
+            let json = try! JSONSerialization.jsonObject(with: objectData!, options: JSONSerialization.ReadingOptions.mutableContainers)
+            let myjson = JSON(json)
+            print(myjson)
 //            self.extractJSON(json:response)
        
         }

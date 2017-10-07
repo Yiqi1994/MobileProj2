@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '13A9A4A8019CEEC71E9CE0B5FB8B1F8A'
+               BlueprintIdentifier = 'B057C33533B34EC4EA0116CE0025C20A'
                BlueprintName = 'AZSClient'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libAZSClient.a'>
+               BuildableName = 'AZSClient.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
