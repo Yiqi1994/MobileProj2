@@ -41,9 +41,9 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
     
     func buttonTouched(button: UIButton) {
         var config = Configuration()
-        config.doneButtonTitle = "Finish"
+        config.doneButtonTitle = "Done"
         config.noImagesTitle = "Sorry! There are no images here!"
-        config.recordLocation = true
+        config.recordLocation = false
         // config.allowVideoSelection = true
         
         let imagePicker = ImagePickerController()
