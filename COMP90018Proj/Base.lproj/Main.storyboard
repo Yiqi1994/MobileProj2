@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,14 +34,11 @@
         <scene sceneID="Uam-wn-Zmc">
             <objects>
                 <viewController id="34T-gd-ql4" customClass="HowToUseViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FCq-nk-aav"/>
-                        <viewControllerLayoutGuide type="bottom" id="plb-U1-oCf"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LZx-UG-Nje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="UsQ-5e-KPZ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="HowToUse" image="HowToUseTab" id="ofM-LU-1qi"/>
                 </viewController>
@@ -52,29 +50,107 @@
         <scene sceneID="N6F-iO-Fk1">
             <objects>
                 <viewController id="eWx-wP-Srv" customClass="CrimeInfoViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gMU-jj-bPp"/>
-                        <viewControllerLayoutGuide type="bottom" id="VIF-M0-CnX"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XYD-PW-okf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-lD-LRw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                             </mapView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uXQ-nT-xHU" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="0.0" y="219" width="256" height="186"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3OT-Qo-sWB" customClass="PieChart" customModule="PieCharts">
+                                        <rect key="frame" x="8" y="0.0" width="280" height="173"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="173" id="KSk-KB-sTu"/>
+                                            <constraint firstAttribute="width" constant="280" id="ogL-xL-oOA"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                                <real key="value" value="80"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3OT-Qo-sWB" secondAttribute="trailing" constant="-32" id="Jz8-SU-KlJ"/>
+                                    <constraint firstItem="3OT-Qo-sWB" firstAttribute="leading" secondItem="uXQ-nT-xHU" secondAttribute="leading" constant="8" id="cqd-pU-Cjr"/>
+                                    <constraint firstItem="3OT-Qo-sWB" firstAttribute="top" secondItem="uXQ-nT-xHU" secondAttribute="top" id="dFd-EW-jMb"/>
+                                    <constraint firstAttribute="bottom" secondItem="3OT-Qo-sWB" secondAttribute="bottom" constant="13" id="lPS-uI-MDt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                        <real key="value" value="80"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="awh-EW-DLh" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="126" y="425" width="233" height="193"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="etn-gw-A7e"/>
+                                    <constraint firstAttribute="height" constant="193" id="pVc-Bb-AFf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                        <real key="value" value="85"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3o6-LW-V4P">
+                                <rect key="frame" x="0.0" y="431" width="133" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="8tZ-YO-3gF"/>
+                                    <constraint firstAttribute="height" constant="187" id="m1M-a5-mIC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VIF-M0-CnX" firstAttribute="top" secondItem="QUe-lD-LRw" secondAttribute="bottom" constant="362" id="MPF-76-ZPs"/>
-                            <constraint firstItem="QUe-lD-LRw" firstAttribute="leading" secondItem="XYD-PW-okf" secondAttribute="leading" id="PQ1-Qd-fMo"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="3o6-LW-V4P" secondAttribute="trailing" constant="242" id="0a1-Yc-Bp4"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="top" secondItem="uXQ-nT-xHU" secondAttribute="bottom" constant="20" id="0tJ-nb-RZp"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" constant="126" id="4xs-5Z-yVs"/>
+                            <constraint firstItem="3o6-LW-V4P" firstAttribute="top" secondItem="uXQ-nT-xHU" secondAttribute="bottom" constant="26" id="E30-Fs-VkK"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="bottom" secondItem="QUe-lD-LRw" secondAttribute="bottom" constant="398" id="EIM-ck-Z57"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="QUe-lD-LRw" secondAttribute="trailing" id="Hfq-I7-5E5"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="bottom" secondItem="ciC-IT-ijD" secondAttribute="bottom" id="J5L-tc-FTi"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" id="PQ1-Qd-fMo"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="top" secondItem="XYD-PW-okf" secondAttribute="top" id="SQZ-ge-1eh"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="QUe-lD-LRw" secondAttribute="trailing" id="TWb-6z-HCT"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="awh-EW-DLh" secondAttribute="trailing" constant="16" id="V5t-az-hYz"/>
                             <constraint firstItem="QUe-lD-LRw" firstAttribute="top" secondItem="XYD-PW-okf" secondAttribute="top" id="XiQ-DR-iUM"/>
-                            <constraint firstAttribute="trailing" secondItem="QUe-lD-LRw" secondAttribute="trailing" id="bTA-zX-9AY"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="QUe-lD-LRw" secondAttribute="trailing" id="bTA-zX-9AY"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" id="dSL-6q-ElF"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" constant="126" id="erk-Ok-FIT"/>
+                            <constraint firstItem="3o6-LW-V4P" firstAttribute="bottom" secondItem="ciC-IT-ijD" secondAttribute="bottom" id="fqb-iH-ZcO"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="bottom" secondItem="ciC-IT-ijD" secondAttribute="bottom" id="kNd-iP-e60"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" id="ljv-OO-6qO"/>
+                            <constraint firstItem="awh-EW-DLh" firstAttribute="top" secondItem="uXQ-nT-xHU" secondAttribute="bottom" constant="20" id="omp-ld-YqQ"/>
+                            <constraint firstItem="3o6-LW-V4P" firstAttribute="leading" secondItem="ciC-IT-ijD" secondAttribute="leading" id="pSC-kQ-oVP"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="bottom" secondItem="QUe-lD-LRw" secondAttribute="bottom" constant="398" id="wY9-Al-Yba"/>
+                            <constraint firstItem="QUe-lD-LRw" firstAttribute="top" secondItem="XYD-PW-okf" secondAttribute="top" id="x6r-B6-1pH"/>
+                            <constraint firstItem="ciC-IT-ijD" firstAttribute="trailing" secondItem="awh-EW-DLh" secondAttribute="trailing" constant="16" id="zPm-U6-v8s"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="ciC-IT-ijD"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Crime Info" image="InfoTab" id="KNQ-ka-2XJ"/>
                     <connections>
+                        <outlet property="image2" destination="3o6-LW-V4P" id="O1h-fP-ryB"/>
                         <outlet property="mapView" destination="QUe-lD-LRw" id="XeG-2L-iwZ"/>
+                        <outlet property="pieChartView" destination="3OT-Qo-sWB" id="hom-mU-Dcc"/>
+                        <outlet property="pieChartViewA" destination="awh-EW-DLh" id="KKY-Qw-s95"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaj-h6-6Q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,14 +161,11 @@
         <scene sceneID="WNJ-Sf-THP">
             <objects>
                 <viewController id="L5t-G2-LeW" customClass="FaceIdentViewController" customModule="COMP90018Proj" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Hp1-Zv-fam"/>
-                        <viewControllerLayoutGuide type="bottom" id="3X6-Qf-LaF"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="emR-AQ-ZrA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="gnz-kn-wid"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Face Identify" image="FaceTab" id="oSZ-ce-mfh"/>
                 </viewController>
@@ -106,9 +179,4 @@
         <image name="HowToUseTab" width="25" height="25"/>
         <image name="InfoTab" width="25" height="25"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>
