@@ -11,37 +11,16 @@ import CoreLocation
 import MapKit
 import Foundation
 
-
 class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
-//    @IBOutlet weak var tableView: UITableView!
-//
-//
-//
-//
-//
-//    var items:[(days:String,city:String,inches:String)]?
-//
-//    private var cityValue:[String]=[]
-//    private var inchesValue:[String]=[]
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
+    
+    var curPostcode: String! = "9999"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // get and verify authorization
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
         
@@ -60,16 +39,9 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 100.0
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
-        
-        lookUpCurrentLocation(completionHandler: {(location: CLPlacemark?) in
-            print(location?.postalCode)
-            self.getDataFromDB(postcode: (location?.postalCode)!)
-        })
-        
+
+        // show user locaiton on map
         mapView.showsUserLocation=true
-        
-        
-       
         
     }
 
@@ -78,25 +50,29 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // set map region when location get updated and send crime info request
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // get current location
         let location = locations[0]
         
+        // set map region
         let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let region:MKCoordinateRegion = MKCoordinateRegionMake(myLocation, span)
-//        let pinForUserLocation = MKPointAnnotation()
-//        pinForUserLocation.coordinate = myLocation
-//
-//        mapView.addAnnotation(pinForUserLocation)
-//        mapView.showAnnotations([pinForUserLocation], animated: true)
-          mapView.setRegion(region, animated: true)
-    
+        mapView.setRegion(region, animated: true)
         
+        // get postcode and if send crime info request when postcode changes
+        lookUpCurrentLocation(location: location, completionHandler: {(placeMark: CLPlacemark?) in
+            let newPostcode = placeMark?.postalCode
+            if(newPostcode != self.curPostcode){
+                self.curPostcode = newPostcode!
+                self.getDataFromDB(postcode: self.curPostcode)
+            }
+        })
     }
     
-    
-    func lookUpCurrentLocation(completionHandler: @escaping (CLPlacemark?) -> Void) {
+    // return postcode of current location
+    func lookUpCurrentLocation(location: CLLocation, completionHandler: @escaping (CLPlacemark?) -> Void) {
         if let lastLocation = self.locationManager.location{
             let geocoder = CLGeocoder()
             
@@ -115,7 +91,7 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
     
     
     func getDataFromDB(postcode:String){
-        // get history information of crime of the corresponding area of current postcode
+        // get history crime information of current area based on postcode
         var request = URLRequest(url: URL(string: "https://facedbidentify.herokuapp.com/api/crimeInfo?postcode=\(String(describing: postcode))")!)
         
         request.httpMethod = "GET"
@@ -135,21 +111,13 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
                 print("response = \(String(describing: response))")
             }
             
-            let responseString = String(data: data, encoding: .utf8)
+            let responseString = String(data: data, encoding: .utf8)            
+            
             print("responseString = \(String(describing: responseString))")
-            self.extractJSON(json:response)
+//            self.extractJSON(json:response)
        
         }
         task.resume()
-    }
-    
-    
-
-    @IBAction func updateInfoFromDB(_ sender: Any) {
-        lookUpCurrentLocation(completionHandler: {(location: CLPlacemark?) in
-            print(location?.postalCode)
-            self.getDataFromDB(postcode: (location?.postalCode)!)
-        })
     }
     
     func extractJSON(json:Any) {
@@ -163,10 +131,10 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    struct Todo:Codable {
-        var suburb:String
-        var offenceType:String
-    }
+//    struct Todo:Codable {
+//        var suburb:String
+//        var offenceType:String
+//    }
     
     // count the apperance of key in jsonString or jsonArray
 //    func countAppearance(JSONArray: Array<Any>){

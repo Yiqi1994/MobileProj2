@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Use location to obtain crime info.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Use location to obtain crime info.</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>NSLocationWhenInUseUsageDescription</key>
