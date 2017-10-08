@@ -16,6 +16,9 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
     UITabBarDelegate,ImagePickerDelegate{
     
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var namefiled: UILabel!
+    @IBOutlet weak var crimefiled: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var button: UIButton!
     
@@ -27,13 +30,8 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
         self.view.backgroundColor = UIColor.init(red:244.0/255.0, green: 245.0 / 255.0, blue: 245.0/255,alpha: 1.0)
         
         button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)
-        
-        // Use test image here
-//        uploadPhoto(image: #imageLiteral(resourceName: "testImage"))
-//        
-//        // Inform server the file is uploaded using a http GET request
-//        identify()
-//        
+   
+       // activityIndicator.
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,6 +75,7 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
         blob.upload(from: data!, completionHandler: {(NSError) -> Void in
             NSLog("uploaded")
         })
+        self.activityIndicator.startAnimating()
     }
     
     func identify(){
@@ -99,9 +98,16 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
             
             let responseString = String(data: data, encoding: .utf8)
 //            print("responseString = \(String(describing: responseString))")
-            let imageurl:String = "https://faceimg.blob.core.windows.net/faceimgs/"+responseString!
+            var responseStrArray = responseString?.components(separatedBy: ",")
+            let faceIdentStr: String = responseStrArray![0]
+            let crimeInfoStr: String = responseStrArray![1]
+            let imageurl:String = "https://faceimg.blob.core.windows.net/faceimgs/"+faceIdentStr
+            self.namefiled.text = faceIdentStr
+            self.crimefiled.text = crimeInfoStr
             let url = NSURL(string: imageurl)!
             let identifiedImage = try!Data(contentsOf: url as URL)
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.hidesWhenStopped = true
             self.imageView.image = UIImage(data: identifiedImage)
         }
         task.resume()
@@ -120,7 +126,7 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
         
-//        imageView.image = images[0]
+          imageView.image = images[0]
           uploadPhoto(image: #imageLiteral(resourceName: "testImage"))
           identify()
     }

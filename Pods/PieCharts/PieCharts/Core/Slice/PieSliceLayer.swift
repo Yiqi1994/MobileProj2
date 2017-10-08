@@ -275,10 +275,4 @@ open class PieSliceLayer: CALayer, CAAnimationDelegate {
         
         return min(smallestStartAngleDistance, smallestEndAngleDistance) * 2
     }
-    
-    
-    open override var debugDescription: String {
-        return "{data: \(sliceData), start: \(startAngle.radiansToDegrees), end: \(endAngle.radiansToDegrees)}"
-    }
-  
 }

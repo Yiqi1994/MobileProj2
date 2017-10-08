@@ -467,13 +467,14 @@
 			baseConfigurationReference = A550490509249A8BAF3FDD6F /* Pods-COMP90018Proj.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = F5NBU4297C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/COMP90018Proj",
 				);
 				INFOPLIST_FILE = COMP90018Proj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KaiZhang.COMP90018Proj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,13 +488,14 @@
 			baseConfigurationReference = 8250FE12A02B9A399D23E1D4 /* Pods-COMP90018Proj.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = F5NBU4297C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/COMP90018Proj",
 				);
 				INFOPLIST_FILE = COMP90018Proj/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = KaiZhang.COMP90018Proj;
 				PRODUCT_NAME = "$(TARGET_NAME)";
