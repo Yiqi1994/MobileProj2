@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import ESTabBarController_swift
+import ImagePicker
+import CoreData
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let tabBarController = ESTabBarController()
+        tabBarController.delegate = self
+        tabBarController.tabBar.backgroundImage = UIImage(named: "background_dark")
+
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let v3 = storyBoard.instantiateViewController(withIdentifier: "crimeInfo")
+        let v2 = storyBoard.instantiateViewController(withIdentifier: "faceIdent")
+        let v1 = storyBoard.instantiateViewController(withIdentifier: "howToUse")
+
+        v1.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "How to Use",image: UIImage(named: "find"), selectedImage: UIImage(named: "find_1"))
+        v2.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Face Identify",image: UIImage(named: "photo_verybig"), selectedImage: UIImage(named: "photo_verybig-1"))
+        v3.tabBarItem = ESTabBarItem.init(ExampleIrregularityBasicContentView(), title: "Crime Info",image: UIImage(named: "cardboard"), selectedImage: UIImage(named: "cardboard_1"))
+
+        tabBarController.viewControllers = [v1, v2, v3]
+       
+        self.window?.rootViewController = tabBarController
+        tabBarController.title = "Identify Crime Nearby"
+        
         return true
     }
 

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AZSClient.framework">
+   </FileRef>
+   <FileRef
       location = "group:COMP90018Proj.xcodeproj">
    </FileRef>
    <FileRef
