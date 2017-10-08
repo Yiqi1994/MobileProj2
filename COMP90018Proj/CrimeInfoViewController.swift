@@ -17,9 +17,8 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
         print("Selected:\(selected),slice:\(slice)")
     }
     
-    @IBOutlet weak var image2: UIImageView!
-    
-    
+    @IBOutlet weak var activityIndicator2: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator1: UIActivityIndicatorView!
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
     
@@ -28,6 +27,7 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         // get and verify authorization
         locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
@@ -50,8 +50,6 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
         
         // show user locaiton on map
         mapView.showsUserLocation=true
-        
-        //image2.image = UIImage(named: ("testImage"))
     }
     
     override func didReceiveMemoryWarning() {
@@ -132,17 +130,15 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
                 let key = temp["CSA Offence Division"].string
                 if(chartDataSuburb[key!] != nil) {
                     let old = chartDataSuburb[key!]
-                    let new = old! + 1
+                    let new = old! + Double(temp["Offence Count"].string!)!
                     chartDataSuburb[key!] = new
                 } else {
-                    chartDataSuburb[key!] = 1
+                    chartDataSuburb[key!] = Double(temp["Offence Count"].string!)!
                 }
             }
             print(chartDataSuburb)
             print(chartDataSuburb.count)
             
-            //            self.pieChartView.layers = [self.createCustomViewsLayer(), self.createTextLayer()]
-            //            self.pieChartView.delegate = self
             self.pieChartView.models = self.createModels1(dic: chartDataSuburb)
             self.pieChartViewA.models = self.createModels()
         }
@@ -155,15 +151,9 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
     override func viewDidAppear(_ animated: Bool) {
         pieChartView.layers = [createCustomViewsLayer(), createTextLayer()]
         pieChartView.delegate = self
-        //        pieChartView.models = createModels() // order is important - models have to be set at the end
         pieChartViewA.layers = [createCustomViewsLayer(), createTextLayer()]
         pieChartViewA.delegate = self
     }
-    
-    
-    
-    // MARK: - Models
-    
     
     fileprivate func createModels1(dic: Dictionary<String, Double>) -> [PieSliceModel] {
         let alpha: CGFloat = 0.5
@@ -183,12 +173,12 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
         let alpha: CGFloat = 0.5
         
         return [
-            PieSliceModel(value: 1, color: UIColor.yellow.withAlphaComponent(alpha)),
-            PieSliceModel(value: 2, color: UIColor.blue.withAlphaComponent(alpha)),
-            PieSliceModel(value: 3, color: UIColor.green.withAlphaComponent(alpha)),
-            PieSliceModel(value: 4, color: UIColor.cyan.withAlphaComponent(alpha)),
-            PieSliceModel(value: 5, color: UIColor.red.withAlphaComponent(alpha)),
-            PieSliceModel(value: 6, color: UIColor.magenta.withAlphaComponent(alpha)),
+            PieSliceModel(value: 115.9, color: UIColor.yellow.withAlphaComponent(alpha)),
+            PieSliceModel(value: 471.2, color: UIColor.blue.withAlphaComponent(alpha)),
+            PieSliceModel(value: 44.9, color: UIColor.green.withAlphaComponent(alpha)),
+            PieSliceModel(value: 51.8, color: UIColor.cyan.withAlphaComponent(alpha)),
+            PieSliceModel(value: 102.5, color: UIColor.red.withAlphaComponent(alpha)),
+            PieSliceModel(value: 2.6, color: UIColor.magenta.withAlphaComponent(alpha)),
         ]
         
     }
@@ -237,11 +227,11 @@ class CrimeInfoViewController: UIViewController, CLLocationManagerDelegate,PieCh
                 let specialTextLabel = UILabel()
                 specialTextLabel.textAlignment = .center
                 if slice.data.id == 0 {
-                    specialTextLabel.text = "A"
+                    specialTextLabel.text = " "
                     specialTextLabel.font = UIFont.boldSystemFont(ofSize: 18)
                 } else if slice.data.id == 3 {
-                    specialTextLabel.textColor = UIColor.blue
-                    specialTextLabel.text = "B"
+                    specialTextLabel.textColor = UIColor.white
+                    specialTextLabel.text = " "
                 }
                 specialTextLabel.sizeToFit()
                 specialTextLabel.frame = CGRect(x: 0, y: 40, width: 100, height: 20)
