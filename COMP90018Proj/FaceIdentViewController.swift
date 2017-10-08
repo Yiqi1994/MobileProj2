@@ -21,6 +21,9 @@ class FaceIdentViewController: UIViewController,UITabBarControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
         self.view.backgroundColor = UIColor.init(red:244.0/255.0, green: 245.0 / 255.0, blue: 245.0/255,alpha: 1.0)
         
         button.addTarget(self, action: #selector(buttonTouched(button:)), for: .touchUpInside)

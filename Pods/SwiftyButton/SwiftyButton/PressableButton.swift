@@ -14,7 +14,7 @@ open class PressableButton: UIButton {
     public enum Defaults {
         public static var colors = ColorSet(
             button: UIColor(colorLiteralRed: 34 / 255, green: 193 / 255, blue: 34 / 255, alpha: 1),
-            shadow: UIColor(colorLiteralRed: 41 / 255, green: 128 / 255, blue: 185 / 255, alpha: 1)
+            shadow: UIColor(colorLiteralRed: 190 / 255, green: 190 / 255, blue: 190 / 255, alpha: 1)
         )
         public static var disabledColors = ColorSet(
             button: UIColor(colorLiteralRed: 41 / 255, green: 128 / 255, blue: 185 / 255, alpha: 1),

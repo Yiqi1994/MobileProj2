@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +39,22 @@
                     <view key="view" contentMode="scaleToFill" id="LZx-UG-Nje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EHJ-E7-bBT">
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Tutorial" id="YHn-b5-VH8"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EHJ-E7-bBT" firstAttribute="leading" secondItem="LZx-UG-Nje" secondAttribute="leading" id="27Y-Ay-j7D"/>
+                            <constraint firstAttribute="trailing" secondItem="EHJ-E7-bBT" secondAttribute="trailing" id="Jff-Hy-baT"/>
+                            <constraint firstItem="EHJ-E7-bBT" firstAttribute="top" secondItem="LZx-UG-Nje" secondAttribute="top" constant="13" id="mkr-20-L2S"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="HowToUse" image="HowToUseTab" id="ofM-LU-1qi"/>
                 </viewController>
@@ -61,8 +74,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-lD-LRw">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="256"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QUe-lD-LRw">
+                                <frame key="frameInset" width="1000" height="1000"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -97,28 +110,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-Z6-E55">
-                                <rect key="frame" x="118" y="535" width="138" height="34"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="titleShadowOffset" width="3" height="6"/>
-                                <state key="normal" title="Pick Image">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L6E-8j-UkR">
-                                <rect key="frame" x="27" y="114" width="321" height="219"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L6E-8j-UkR">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="219" id="1UZ-1Z-QJq"/>
+                                    <constraint firstAttribute="height" constant="375" id="1UZ-1Z-QJq"/>
                                 </constraints>
                             </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cku-rz-iQz">
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Identify Crime Face" id="Bc4-yY-05s"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-Z6-E55" customClass="FlatButton" customModule="SwiftyButton">
+                                <frame key="frameInset" minX="263" minY="503" width="105" height="21"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="e1r-Z6-E55" secondAttribute="height" multiplier="44:7" constant="-27.428571428571416" id="zem-DP-WhI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="15"/>
+                                <size key="titleShadowOffset" width="3" height="6"/>
+                                <state key="normal" title="Pick Image"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowHeight">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="depth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L6E-8j-UkR" firstAttribute="centerX" secondItem="e1r-Z6-E55" secondAttribute="centerX" id="8cG-bs-cNF"/>
-                            <constraint firstItem="L6E-8j-UkR" firstAttribute="top" secondItem="Hp1-Zv-fam" secondAttribute="bottom" constant="94" id="Gt2-jM-ldt"/>
-                            <constraint firstItem="e1r-Z6-E55" firstAttribute="centerX" secondItem="emR-AQ-ZrA" secondAttribute="centerX" id="Rwu-UP-IlQ"/>
-                            <constraint firstItem="L6E-8j-UkR" firstAttribute="leading" secondItem="emR-AQ-ZrA" secondAttribute="leadingMargin" constant="12" id="gpn-ZD-ZK0"/>
-                            <constraint firstItem="3X6-Qf-LaF" firstAttribute="top" secondItem="e1r-Z6-E55" secondAttribute="bottom" constant="139" id="h5Z-YK-CZO"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="centerX" secondItem="e1r-Z6-E55" secondAttribute="centerX" constant="1.5" id="8cG-bs-cNF"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="top" secondItem="Hp1-Zv-fam" secondAttribute="bottom" constant="90" id="Gt2-jM-ldt"/>
+                            <constraint firstItem="cku-rz-iQz" firstAttribute="centerX" secondItem="L6E-8j-UkR" secondAttribute="centerX" id="Pg4-tH-cKq"/>
+                            <constraint firstItem="e1r-Z6-E55" firstAttribute="centerX" secondItem="emR-AQ-ZrA" secondAttribute="centerX" constant="-1.5" id="Rwu-UP-IlQ"/>
+                            <constraint firstItem="cku-rz-iQz" firstAttribute="leading" secondItem="emR-AQ-ZrA" secondAttribute="leading" id="g2p-AP-3zp"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="leading" secondItem="emR-AQ-ZrA" secondAttribute="leadingMargin" constant="-16" id="gpn-ZD-ZK0"/>
+                            <constraint firstItem="3X6-Qf-LaF" firstAttribute="top" secondItem="e1r-Z6-E55" secondAttribute="bottom" constant="37" id="h5Z-YK-CZO"/>
+                            <constraint firstItem="L6E-8j-UkR" firstAttribute="top" secondItem="cku-rz-iQz" secondAttribute="bottom" constant="53" id="siB-YX-93p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Face Identify" image="FaceTab" id="oSZ-ce-mfh"/>

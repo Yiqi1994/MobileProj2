@@ -8,5 +8,4 @@ target 'COMP90018Proj' do
   pod 'ImagePicker'
   pod 'PieCharts'
   pod 'SwiftyButton'
-
 end
